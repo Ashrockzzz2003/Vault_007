@@ -51,5 +51,6 @@
 
 ### Locked Screen
 
+<img src="https://user-images.githubusercontent.com/90165751/210848533-1118a9e6-4fa5-4cd3-8b10-8c45208f5cfe.png" height = "40%" width = "40%">
 <img src="https://user-images.githubusercontent.com/90165751/210846696-aa21d1e4-905c-4fd0-89d8-7ff8b705ccde.png" height = "40%" width = "40%">
 
