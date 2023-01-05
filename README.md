@@ -25,6 +25,8 @@
   - [x] Edit Stored password
   - [x] Delete Stored password
 - [x] Copy Password from HomeScreen
+- [ ] Search
+- [ ] Generate Excel
 
 ## The App
 
