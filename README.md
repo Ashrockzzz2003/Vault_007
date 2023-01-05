@@ -1,16 +1,30 @@
-# vault_007_3
+# Vault_007
 
-One Place to manage and remember passwords!
+`One Place to manage and remember passwords!`
 
-## Getting Started
+- Create, save and manage your passwords and easily sign in to sites and apps.
 
-This project is a starting point for a Flutter application.
+## Supported Platforms
 
-A few resources to get you started if this is your first Flutter project:
+- [x] Android
+- [ ] iOS
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [x] End-to-End Encryption
+- [x] Local App Lock Support
+- [x] Authentication
+  - [x] `Fingerprint` 
+  - [x] `Face ID`
+  - [x] `PIN`
+  - [x] `Pattern`
+- [x] Autogenerate Passwords
+- [x] Works Offline
+- [x] Store Passwords
+- [x] Manage Stored Passwords
+  - [x] Edit Stored password
+  - [x] Delete Stored password
+- [x] Copy Password from HomeScreen
+
+## The App
+
