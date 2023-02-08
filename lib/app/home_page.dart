@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:vault_007_3/app/search_screen.dart';
 import 'package:vault_007_3/database/database.dart';
 import 'package:vault_007_3/app/add_new_password_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -56,17 +57,17 @@ class HomePageState extends State<HomePage> {
             ),
             actions: [
               IconButton(
-                onPressed: () => Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => AddPassword(
-                      isarService: widget.isarService,
-                    ),
-                  ),
-                ),
+                onPressed: () {
+                  showSearch(
+                      context: context,
+                      delegate: PasswordSearchDelegate(isarService: widget.isarService,),
+                  );
+                },
                 icon: const Icon(
-                  Icons.add,
+                  Icons.search,
                   color: Color(0xffe3e3e3),
                 ),
+
               )
             ],
             leading: IconButton(

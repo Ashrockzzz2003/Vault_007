@@ -26,6 +26,11 @@ class IsarService with ChangeNotifier{
     notifyListeners();
   }
 
+  Stream<List<Passwords>> listenToSearch(String search) async* {
+    final isar = await db;
+    yield* isar.passwords.where().filter().serviceNameContains(search, caseSensitive: false).watch(fireImmediately: true);
+  }
+
   Stream<List<Passwords>> listenToPasswords() async* {
     final isar = await db;
     yield* isar.passwords.where().sortByServiceName().watch(fireImmediately: true);
