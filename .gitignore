@@ -45,3 +45,4 @@ app.*.map.json
 
 # Security
 lib/model/crypto.dart
+lib/model/auto_generate_password.dart
