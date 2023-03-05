@@ -12,8 +12,8 @@ class PasswordSearchDelegate extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     return SearchScreen(
-      isarService: isarService,
-      query: query,
+        isarService: isarService,
+        query: query,
     );
   }
 

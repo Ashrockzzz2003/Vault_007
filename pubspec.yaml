@@ -40,10 +40,12 @@ dependencies:
   isar_flutter_libs: ^3.0.5
   path_provider: ^2.0.11
   encrypt: ^5.0.1
-  local_auth: ^2.1.2
+  local_auth: ^2.1.5
   fluttertoast: ^8.1.2
   flutter_scrolling_fab_animated: ^0.1.4
   flutter_staggered_grid_view: ^0.6.2
+  flutter_launcher_icons: ^0.12.0
+  url_launcher: ^6.1.10
 
 dev_dependencies:
   flutter_test:
@@ -57,6 +59,13 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   isar_generator: ^3.0.5
   build_runner: ^2.3.2
+  flutter_launcher_icons: ^0.12.0
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo/logo_v1.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -65,7 +74,8 @@ dev_dependencies:
 flutter:
   assets:
     - lib/google_fonts/
-    - assets/images/
+    - assets/
+    - assets/logo/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

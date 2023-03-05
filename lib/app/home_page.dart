@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:vault_007_3/app/about_screen.dart';
 import 'package:vault_007_3/app/search_screen.dart';
 import 'package:vault_007_3/database/database.dart';
 import 'package:vault_007_3/app/add_new_password_screen.dart';
@@ -71,7 +70,11 @@ class HomePageState extends State<HomePage> {
               )
             ],
             leading: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context) => const AboutScreen(),
+                ));
+              },
               icon: const Icon(
                 Icons.security,
                 color: Color(0xffe3e3e3),
@@ -83,29 +86,27 @@ class HomePageState extends State<HomePage> {
           SliverToBoxAdapter(
             child: Column(
               children: <Widget>[
+                Image.asset("assets/image_3.webp", width: 240,),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 7, sigmaY: 7),
-                    child: Container(
-                      width: double.maxFinite,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffA6C8FF),
-                        borderRadius: BorderRadius.circular(12.0),
-                      ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 16.0),
-                        child: Text(
-                          "Create, save and manage your passwords and easily sign in to sites and apps.",
-                          style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                              color: Color(0xff003060),
-                              fontSize: 16,
-                            ),
+                  padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 0.0),
+                  child: Container(
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffA6C8FF),
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Padding(
+                      padding:
+                      const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 8.0),
+                      child: Text(
+                        "Create, save and manage your passwords and easily sign in to sites and apps.",
+                        style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                            color: Color(0xff003060),
+                            fontSize: 16,
                           ),
-                          textAlign: TextAlign.center,
                         ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
@@ -122,12 +123,12 @@ class HomePageState extends State<HomePage> {
                     } else if (s.data!.isEmpty) {
                       return Padding(
                         padding:
-                            const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
+                            const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 5.0),
                         child: Container(
                           width: double.maxFinite,
                           decoration: BoxDecoration(
                             color: const Color(0xffEFB8C8),
-                            borderRadius: BorderRadius.circular(12.0),
+                            borderRadius: BorderRadius.circular(16.0),
                           ),
                           child: Padding(
                             padding: const EdgeInsets.fromLTRB(

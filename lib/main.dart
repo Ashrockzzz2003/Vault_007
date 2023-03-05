@@ -110,17 +110,17 @@ class MyAppState extends State<MyApp> with WidgetsBindingObserver {
                 slivers: [
                   // AppBar
                   SliverAppBar.large(
-                    leading: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.security,
-                        color: Color(0xffe3e3e3),
-                      ),
-                    ),
-                    title: Text(
-                      "Vault007",
-                      style: GoogleFonts.lato(
-                        textStyle: const TextStyle(color: Color(0xffe3e3e3)),
+                    floating: false,
+                    pinned: true,
+                    snap: false,
+                    centerTitle: true,
+                    flexibleSpace: FlexibleSpaceBar(
+                      centerTitle: true,
+                      title: Text(
+                        "Vault007",
+                        style: GoogleFonts.lato(
+                          textStyle: const TextStyle(color: Color(0xffe3e3e3)),
+                        ),
                       ),
                     ),
                   ),
@@ -131,6 +131,7 @@ class MyAppState extends State<MyApp> with WidgetsBindingObserver {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
+                        Image.asset("assets/image_4.webp",width: 320,),
                         Padding(
                           padding:
                               const EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 10.0),
