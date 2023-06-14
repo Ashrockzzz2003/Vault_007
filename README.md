@@ -1,16 +1,54 @@
-# vaultzerozeroseven_marktwo
 
-Vault 007, Mark 2.
+# Vault 007, Mark 2.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+`One Place to manage and remember passwords!`
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Create, save and manage your passwords and easily sign in to sites and apps.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Download
+
+<a href='https://play.google.com/store/apps/details?id=com.ashapps.vaultzerozeroseven_marktwo'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="72"/></a>
+
+## Note
+
+> Certain files that are required to fully run the app are not shared in the repo due to security reasons. :)
+
+## Supported Platforms
+
+- [x] Android
+- [x] iOS	
+
+## Features
+
+- [x] End-to-End Encryption
+- [x] Unique Encryption Key
+- [x] Local App Lock Support
+- [x] Authentication	
+  - [x] `Fingerprint` 	
+  - [x] `Face ID`	
+  - [x] `PIN`	
+  - [x] `Pattern`	
+- [x] Autogenerate Passwords	
+- [x] Works Offline	
+- [x] Store Passwords	
+- [x] Manage Stored Passwords	
+  - [x] Edit Stored password	
+  - [x] Delete Stored password	
+- [x] Copy Password from HomeScreen	
+- [x] Search	
+
+## Personalized UI	
+
+- [x] Dynamic Color. (Pick colors from user's wallpaper.)	
+- [x] Light and Dark mode	
+
+## Planned
+
+- [ ] Tag Based Filter	
+- [ ] Generate Excel	
+
+## Developer	
+
+`Ashwin Narayanan S`	
