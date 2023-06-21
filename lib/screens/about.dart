@@ -121,7 +121,7 @@ class AboutScreenState extends State<AboutScreen> {
                   onTap: () {
                     launchUrl(
                       Uri.parse("https://ashrockzzz2003.github.io/portfolio/"),
-                      mode: LaunchMode.platformDefault,
+                      mode: LaunchMode.externalApplication,
                     );
                   },
                   child: Container(
@@ -213,7 +213,7 @@ class AboutScreenState extends State<AboutScreen> {
                     launchUrl(
                       Uri.parse(
                           "https://www.linkedin.com/in/rohith-m-profilein/"),
-                      mode: LaunchMode.platformDefault,
+                      mode: LaunchMode.externalApplication,
                     );
                   },
                   child: Container(
