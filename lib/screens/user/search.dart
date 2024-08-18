@@ -64,7 +64,7 @@ class SearchScreenState extends State<SearchScreen> {
       backgroundColor:
           Theme.of(context).colorScheme.brightness == Brightness.dark
               ? Colors.black
-              : Theme.of(context).colorScheme.background,
+              : Theme.of(context).colorScheme.surface,
       body: StreamBuilder<List<Passwords>>(
         stream: widget.isarService.listenToSearch(widget.query),
         builder: (context, s) {

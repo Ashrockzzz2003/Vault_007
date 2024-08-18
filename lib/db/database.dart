@@ -59,7 +59,7 @@ class IsarService with ChangeNotifier {
 
   Future<bool> isNew(String serviceName) async {
     final isar = await db;
-    return await isar.passwords
+    return isar.passwords
         .filter()
         .serviceNameMatches(serviceName, caseSensitive: false)
         .isEmptySync();

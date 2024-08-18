@@ -16,12 +16,12 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.dark ? Colors.black : Theme.of(context).colorScheme.background,
+      backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.dark ? Colors.black : Theme.of(context).colorScheme.surface,
       extendBodyBehindAppBar: true,
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.dark ? Colors.black : Theme.of(context).colorScheme.background,
+            backgroundColor: Theme.of(context).colorScheme.brightness == Brightness.dark ? Colors.black : Theme.of(context).colorScheme.surface,
             leading: IconButton(
               onPressed: () {
                 Navigator.of(context).pop();
@@ -35,7 +35,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
               title: Text(
                 "Add New Password",
                 style: GoogleFonts.raleway(
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onSurface),
               ),
             ),
           ),

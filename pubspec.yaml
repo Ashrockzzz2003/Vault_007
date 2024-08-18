@@ -46,7 +46,6 @@ dependencies:
   url_launcher: ^6.1.11
   local_auth: ^2.1.6
   app_settings: ^4.2.0
-  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaultzerozeroseven_marktwo/db/database.dart';
@@ -11,8 +10,7 @@ import 'package:vaultzerozeroseven_marktwo/util/custom_tile.dart';
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
   final isarService = IsarService();
-
-  late ScrollController controller = ScrollController();
+  final ScrollController controller = ScrollController();
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -26,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor:
           Theme.of(context).colorScheme.brightness == Brightness.dark
               ? Colors.black
-              : Theme.of(context).colorScheme.background,
+              : Theme.of(context).colorScheme.surface,
       extendBodyBehindAppBar: true,
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Theme.of(context).brightness == Brightness.dark
@@ -62,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
             backgroundColor:
                 Theme.of(context).colorScheme.brightness == Brightness.dark
                     ? Colors.black
-                    : Theme.of(context).colorScheme.background,
+                    : Theme.of(context).colorScheme.surface,
             floating: false,
             pinned: true,
             snap: false,
@@ -72,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text(
                 "Vault007",
                 style: GoogleFonts.lato(
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onSurface),
               ),
             ),
             actions: [

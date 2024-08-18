@@ -49,7 +49,6 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   final LocalAuthentication auth = LocalAuthentication();
   _SupportState _supportState = _SupportState.unknown;
   String _authorized = 'Not Authorized';
-  bool _isAuthenticating = false;
   late AppLifecycleState prevState;
 
   @override
@@ -96,15 +95,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         break;
       case AppLifecycleState.detached:
         break;
+      case AppLifecycleState.hidden:
+        // TODO: Handle this case.
     }
   }
 
   Future<void> _authenticate() async {
     bool authenticated = false;
     try {
-      setState(() {
-        _isAuthenticating = true;
-      });
       authenticated = await auth.authenticate(
         localizedReason: 'Please authenticate to access your passwords.',
         options: const AuthenticationOptions(
@@ -121,12 +119,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
           _authorized = 'Not Authorized';
         });
       }
-      setState(() {
-        _isAuthenticating = false;
-      });
     } on PlatformException catch (e) {
       setState(() {
-        _isAuthenticating = false;
         _authorized = 'Error - ${e.message}';
       });
       return;
@@ -157,7 +151,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     backgroundColor: Theme.of(context).colorScheme.brightness ==
                             Brightness.light
                         ? Colors.black
-                        : Theme.of(context).colorScheme.background,
+                        : Theme.of(context).colorScheme.surface,
                     body: CustomScrollView(
                       slivers: [
                         // AppBar
@@ -170,7 +164,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                               Theme.of(context).colorScheme.brightness ==
                                       Brightness.light
                                   ? Colors.black
-                                  : Theme.of(context).colorScheme.background,
+                                  : Theme.of(context).colorScheme.surface,
                           flexibleSpace: FlexibleSpaceBar(
                             centerTitle: true,
                             title: Text(
@@ -178,7 +172,8 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                               style: GoogleFonts.lato(
                                   color: Theme.of(context)
                                       .colorScheme
-                                      .onBackground),
+                                      .onSurface,
+                              ),
                             ),
                           ),
                         ),
@@ -258,7 +253,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     backgroundColor: Theme.of(context).colorScheme.brightness ==
                             Brightness.light
                         ? Colors.black
-                        : Theme.of(context).colorScheme.background,
+                        : Theme.of(context).colorScheme.surface,
                     body: CustomScrollView(
                       slivers: [
                         // AppBar
@@ -271,7 +266,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                               Theme.of(context).colorScheme.brightness ==
                                       Brightness.light
                                   ? Colors.black
-                                  : Theme.of(context).colorScheme.background,
+                                  : Theme.of(context).colorScheme.surface,
                           flexibleSpace: FlexibleSpaceBar(
                             centerTitle: true,
                             title: Text(
@@ -279,7 +274,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                               style: GoogleFonts.lato(
                                   color: Theme.of(context)
                                       .colorScheme
-                                      .onBackground),
+                                      .onSurface),
                             ),
                           ),
                         ),

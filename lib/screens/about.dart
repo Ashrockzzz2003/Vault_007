@@ -17,7 +17,7 @@ class AboutScreenState extends State<AboutScreen> {
       backgroundColor:
           Theme.of(context).colorScheme.brightness == Brightness.dark
               ? Colors.black
-              : Theme.of(context).colorScheme.background,
+              : Theme.of(context).colorScheme.surface,
       body: CustomScrollView(
         slivers: [
           // AppBar
@@ -25,7 +25,7 @@ class AboutScreenState extends State<AboutScreen> {
             backgroundColor:
                 Theme.of(context).colorScheme.brightness == Brightness.dark
                     ? Colors.black
-                    : Theme.of(context).colorScheme.background,
+                    : Theme.of(context).colorScheme.surface,
             floating: false,
             pinned: true,
             snap: false,
@@ -36,7 +36,7 @@ class AboutScreenState extends State<AboutScreen> {
                 "About",
                 style: GoogleFonts.raleway(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.onBackground),
+                      color: Theme.of(context).colorScheme.onSurface),
                 ),
               ),
             ),
@@ -82,7 +82,7 @@ class AboutScreenState extends State<AboutScreen> {
                         style: GoogleFonts.lato(
                           textStyle: TextStyle(
                             fontSize: 32,
-                            color: Theme.of(context).colorScheme.onBackground,
+                            color: Theme.of(context).colorScheme.onSurface,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -96,7 +96,7 @@ class AboutScreenState extends State<AboutScreen> {
                           textStyle: TextStyle(
                               fontSize: 16,
                               color:
-                                  Theme.of(context).colorScheme.onBackground),
+                                  Theme.of(context).colorScheme.onSurface),
                         ),
                       ),
                     ],
@@ -110,7 +110,7 @@ class AboutScreenState extends State<AboutScreen> {
                   style: GoogleFonts.raleway(
                     textStyle: TextStyle(
                         fontSize: 32,
-                        color: Theme.of(context).colorScheme.onBackground),
+                        color: Theme.of(context).colorScheme.onSurface),
                   ),
                 ),
                 const SizedBox(
@@ -155,7 +155,8 @@ class AboutScreenState extends State<AboutScreen> {
                                     fontSize: 16,
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground),
+                                        .onSurface,
+                                ),
                               ),
                             ),
                             Text(
@@ -175,7 +176,7 @@ class AboutScreenState extends State<AboutScreen> {
                                     fontSize: 12,
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground),
+                                        .onSurface),
                               ),
                             ),
                             Chip(
@@ -185,14 +186,14 @@ class AboutScreenState extends State<AboutScreen> {
                                           .brightness ==
                                       Brightness.dark
                                   ? Colors.black
-                                  : Theme.of(context).colorScheme.background,
+                                  : Theme.of(context).colorScheme.surface,
                               elevation: 3,
                               label: Text(
                                 "Developer",
                                 style: GoogleFonts.raleway(
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground,
+                                        .onSurface,
                                     textStyle: const TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500)),
@@ -247,7 +248,7 @@ class AboutScreenState extends State<AboutScreen> {
                                     fontSize: 16,
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground),
+                                        .onSurface),
                               ),
                             ),
                             Text(
@@ -267,7 +268,7 @@ class AboutScreenState extends State<AboutScreen> {
                                     fontSize: 12,
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground),
+                                        .onSurface),
                               ),
                             ),
                             Chip(
@@ -277,14 +278,14 @@ class AboutScreenState extends State<AboutScreen> {
                                           .brightness ==
                                       Brightness.dark
                                   ? Colors.black
-                                  : Theme.of(context).colorScheme.background,
+                                  : Theme.of(context).colorScheme.surface,
                               elevation: 3,
                               label: Text(
                                 "Logo Designer",
                                 style: GoogleFonts.raleway(
                                     color: Theme.of(context)
                                         .colorScheme
-                                        .onBackground,
+                                        .onSurface,
                                     textStyle: const TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w500)),
