@@ -11,10 +11,6 @@ Create, save and manage your passwords and easily sign in to sites and apps.
 
 <a href='https://play.google.com/store/apps/details?id=com.ashapps.vaultzerozeroseven_marktwo'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' height="72"/></a>
 
-## Note
-
-> The current Play Store deployment does not support updates as I failed to upgrade to API 34 or above within time. All updates will be pushed to a new app that will be released after things are sorted out. :(
-
 ## Supported Platforms
 
 - [x] Android
