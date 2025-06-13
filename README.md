@@ -13,7 +13,7 @@ Create, save and manage your passwords and easily sign in to sites and apps.
 
 ## Note
 
-> Certain files that are required to fully run the app are not shared in the repo due to security reasons. :)
+> The current Play Store deployment does not support updates as I failed to upgrade to API 34 or above within time. All updates will be pushed to a new app that will be released after things are sorted out. :(
 
 ## Supported Platforms
 
