@@ -6,6 +6,7 @@ import 'package:vaultzerozeroseven_marktwo/screens/about.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/user/new_password.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/user/search.dart';
 import 'package:vaultzerozeroseven_marktwo/util/custom_tile.dart';
+import 'package:vaultzerozeroseven_marktwo/util/csv_export.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -82,7 +83,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           isarService: widget.isarService),
                     );
                   },
-                  icon: const Icon(Icons.search_rounded))
+                  icon: const Icon(Icons.search_rounded)),
+              IconButton(
+                onPressed: () {
+                  CsvExportService()
+                      .exportPasswordsToCSV(context, widget.isarService);
+                },
+                icon: const Icon(Icons.file_download_outlined),
+              ),
             ],
             leading: IconButton(
               onPressed: () {

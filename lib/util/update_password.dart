@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart'; // Replaced with SnackBar
+import 'toast_helper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vaultzerozeroseven_marktwo/db/database.dart';
 import 'package:vaultzerozeroseven_marktwo/model/passwords.dart';
@@ -115,16 +116,7 @@ class _UpdatePasswordFormState extends State<UpdatePasswordForm> {
       widget.isarService.createPassword(widget.currentPassword);
     });
     widget.isarService.createPassword(widget.currentPassword);
-    Fluttertoast.showToast(
-      msg:
-          "${widget.currentPassword.serviceName}'s Password updated successfully!",
-      backgroundColor: Theme.of(context).colorScheme.secondaryContainer,
-      textColor: Theme.of(context).colorScheme.onSecondaryContainer,
-      toastLength: Toast.LENGTH_LONG,
-      timeInSecForIosWeb: 1,
-      gravity: ToastGravity.BOTTOM,
-      fontSize: 14.0,
-    );
+    ToastHelper.showToast(context, "${widget.currentPassword.serviceName}'s Password updated successfully!");
     Navigator.of(context).pop();
   }
 
@@ -199,20 +191,7 @@ class _UpdatePasswordFormState extends State<UpdatePasswordForm> {
                   onPressed: () {
                     Clipboard.setData(ClipboardData(
                             text: _userNameController.text.trim()))
-                        .then((value) => Fluttertoast.showToast(
-                              msg:
-                                  "${_titleNameController.text.trim()}'s Username Copied to Clipboard!",
-                              backgroundColor: Theme.of(context)
-                                  .colorScheme
-                                  .secondaryContainer,
-                              textColor: Theme.of(context)
-                                  .colorScheme
-                                  .onSecondaryContainer,
-                              toastLength: Toast.LENGTH_LONG,
-                              timeInSecForIosWeb: 1,
-                              gravity: ToastGravity.BOTTOM,
-                              fontSize: 14.0,
-                            ));
+                        .then((value) => ToastHelper.showToast(context, "${_titleNameController.text.trim()}'s Username Copied to Clipboard!"));
                   },
                   icon: const Icon(Icons.copy_rounded),
                 ),

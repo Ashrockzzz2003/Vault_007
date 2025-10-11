@@ -1,4 +1,3 @@
-import 'package:app_settings/app_settings.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/home.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/intro/introduction_screen.dart';
 import 'package:vaultzerozeroseven_marktwo/util/crypto.dart';
@@ -337,8 +337,17 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                                 height: 24,
                               ),
                               FilledButton.tonalIcon(
-                                onPressed: () {
-                                  AppSettings.openLockAndPasswordSettings();
+                                onPressed: () async {
+                                  const url = 'android-app://com.android.settings/com.android.settings.biometric.BiometricEnrollActivity';
+                                  if (await canLaunchUrl(Uri.parse(url))) {
+                                    await launchUrl(Uri.parse(url));
+                                  } else {
+                                    // Fallback to general settings
+                                    const fallbackUrl = 'package:com.android.settings';
+                                    if (await canLaunchUrl(Uri.parse(fallbackUrl))) {
+                                      await launchUrl(Uri.parse(fallbackUrl));
+                                    }
+                                  }
                                 },
                                 label: Text(
                                   "Open Settings",
