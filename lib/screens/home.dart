@@ -87,42 +87,39 @@ class _HomeScreenState extends State<HomeScreen> {
               StreamBuilder<List<Passwords>>(
                 stream: widget.isarService.listenToPasswords(),
                 builder: (context, snapshot) {
-                  bool hasPasswords = snapshot.hasData && snapshot.data!.isNotEmpty;
+                  bool hasPasswords =
+                      snapshot.hasData && snapshot.data!.isNotEmpty;
                   return IconButton(
-                    onPressed: hasPasswords ? () {
-                      CsvExportService()
-                          .exportPasswordsToCSV(context, widget.isarService);
-                    } : () {
-                      // Show toast when no passwords to export
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text(
-                            "No passwords to export! Start by adding your first password.",
-                            style: GoogleFonts.raleway(),
-                          ),
-                          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-                          duration: const Duration(seconds: 3),
-                          action: SnackBarAction(
-                            label: "Add Password",
-                            textColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                            onPressed: () {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => NewPasswordScreen(
-                                    isarService: widget.isarService,
-                                  ),
+                    onPressed: hasPasswords
+                        ? () {
+                            CsvExportService().exportPasswordsToCSV(
+                                context, widget.isarService);
+                          }
+                        : () {
+                            // Show toast when no passwords to export
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "No passwords to export! Start by adding your first password.",
+                                  style: GoogleFonts.raleway(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
                                 ),
-                              );
-                            },
-                          ),
-                        ),
-                      );
-                    },
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.surface,
+                                duration: const Duration(seconds: 3),
+                              ),
+                            );
+                          },
                     icon: Icon(
                       Icons.file_download_outlined,
-                      color: hasPasswords 
-                        ? null 
-                        : Theme.of(context).colorScheme.onSurface.withOpacity(0.4),
+                      color: hasPasswords
+                          ? null
+                          : Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withValues(alpha: 0.4),
                     ),
                   );
                 },
