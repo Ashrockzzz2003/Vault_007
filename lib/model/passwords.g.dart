@@ -69,7 +69,7 @@ const PasswordsSchema = CollectionSchema(
   getId: _passwordsGetId,
   getLinks: _passwordsGetLinks,
   attach: _passwordsAttach,
-  version: '3.1.0+1',
+  version: '3.1.0',
 );
 
 int _passwordsEstimateSize(

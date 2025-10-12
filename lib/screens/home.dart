@@ -6,6 +6,7 @@ import 'package:vaultzerozeroseven_marktwo/screens/about.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/user/new_password.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/user/search.dart';
 import 'package:vaultzerozeroseven_marktwo/util/custom_tile.dart';
+import 'package:vaultzerozeroseven_marktwo/util/csv_export.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -82,7 +83,47 @@ class _HomeScreenState extends State<HomeScreen> {
                           isarService: widget.isarService),
                     );
                   },
-                  icon: const Icon(Icons.search_rounded))
+                  icon: const Icon(Icons.search_rounded)),
+              StreamBuilder<List<Passwords>>(
+                stream: widget.isarService.listenToPasswords(),
+                builder: (context, snapshot) {
+                  bool hasPasswords =
+                      snapshot.hasData && snapshot.data!.isNotEmpty;
+                  return IconButton(
+                    onPressed: hasPasswords
+                        ? () {
+                            CsvExportService().exportPasswordsToCSV(
+                                context, widget.isarService);
+                          }
+                        : () {
+                            // Show toast when no passwords to export
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "No passwords to export! Start by adding your first password.",
+                                  style: GoogleFonts.raleway(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSurface),
+                                ),
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.surface,
+                                duration: const Duration(seconds: 3),
+                              ),
+                            );
+                          },
+                    icon: Icon(
+                      Icons.file_download_outlined,
+                      color: hasPasswords
+                          ? null
+                          : Theme.of(context)
+                              .colorScheme
+                              .onSurface
+                              .withValues(alpha: 0.4),
+                    ),
+                  );
+                },
+              ),
             ],
             leading: IconButton(
               onPressed: () {

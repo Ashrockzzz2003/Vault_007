@@ -5,7 +5,8 @@ import 'package:vaultzerozeroseven_marktwo/db/database.dart';
 import 'package:vaultzerozeroseven_marktwo/model/passwords.dart';
 import 'package:vaultzerozeroseven_marktwo/screens/user/update_password.dart';
 import 'package:vaultzerozeroseven_marktwo/util/crypto.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+// import 'package:fluttertoast/fluttertoast.dart'; // Replaced with SnackBar
+import 'toast_helper.dart';
 
 class CustomListTile extends StatefulWidget {
   const CustomListTile(
@@ -214,18 +215,8 @@ class CustomListTileState extends State<CustomListTile> {
                             text: Crypto().decryptMyData(
                                 widget.password.password.toString())))
                         .then((result) {
-                      Fluttertoast.showToast(
-                        msg:
-                            "${widget.password.serviceName}'s Password Copied to Clipboard!",
-                        backgroundColor:
-                            Theme.of(context).colorScheme.secondaryContainer,
-                        textColor:
-                            Theme.of(context).colorScheme.onSecondaryContainer,
-                        toastLength: Toast.LENGTH_LONG,
-                        timeInSecForIosWeb: 1,
-                        gravity: ToastGravity.BOTTOM,
-                        fontSize: 14.0,
-                      );
+                      ToastHelper.showToast(context,
+                          "${widget.password.serviceName}'s Password Copied to Clipboard!");
                     });
                   },
                 ),
